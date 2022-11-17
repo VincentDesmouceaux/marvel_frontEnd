@@ -1,0 +1,36 @@
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--black-header);
+  height: var(--header-height);
+  padding: 0 20px;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.header-logo {
+  height: 100px;
+}
+
+img {
+  height: 230px;
+}
+.main {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 30px auto auto;
+  width: 1280px;
+}
+h1 {
+  font-size: 20px;
+}
+
+.card-container {
+  cursor: pointer;
+  padding: 0 6px 16px;
+  width: 235px;
+  color: black;
+  text-decoration: none;
+}
