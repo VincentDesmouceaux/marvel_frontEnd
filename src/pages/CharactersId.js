@@ -1,11 +1,11 @@
 import { useParams } from "react-router-dom";
-import { Link } from "react-router-dom";
+
 import { useState, useEffect } from "react";
 import axios from "axios";
 
 const CharactersId = () => {
   const [data, setData] = useState();
-  const [isLoading, setIsLoading] = useState(true);
+
   const [data2, setData2] = useState();
   const [isLoading2, setIsLoading2] = useState(true);
   const { id } = useParams();
@@ -14,16 +14,20 @@ const CharactersId = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = await axios.get("http://localhost:3000/character/" + id);
+      const response = await axios.get(
+        "https://site--marvelbackend--c7br8w6v87r6.code.run/character/" + id
+      );
       setData(response.data);
       console.log(response.data);
-      setIsLoading(false);
+      //   setIsLoading(false);
     };
     fetchData();
 
     const fetchData2 = async () => {
       try {
-        const response = await axios.get("http://localhost:3000/comics/" + id);
+        const response = await axios.get(
+          "https://site--marvelbackend--c7br8w6v87r6.code.run/comics/" + id
+        );
         setData2(response.data);
         setIsLoading2(false);
       } catch (error) {
