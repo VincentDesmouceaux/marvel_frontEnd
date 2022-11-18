@@ -24,7 +24,7 @@ const CharactersId = () => {
     const fetchData2 = async () => {
       try {
         const response = await axios.get("http://localhost:3000/comics/" + id);
-        setData2(response.data2);
+        setData2(response.data);
         setIsLoading2(false);
       } catch (error) {
         console.log(error);
@@ -33,25 +33,25 @@ const CharactersId = () => {
     fetchData2();
   }, [id]);
 
-  return isLoading ? (
+  return isLoading2 ? (
     <p>Loading ...</p>
   ) : (
     <div className="offer-container">
       <div>
-        <img
-          className="imageC"
-          src={data.thumbnail.path + "." + data.thumbnail.extension}
-          alt="character"
-        />
-      </div>
-      <h1 className="nameC"> {data.name}</h1>
-      <div>
-        <h2>{data.description}</h2>
-      </div>
+        <div>
+          <img
+            className="imageC"
+            src={data.thumbnail.path + "." + data.thumbnail.extension}
+            alt="character"
+          />
+        </div>
+        <h1 className="nameC"> {data.name}</h1>
+        <div>
+          <h2>{data.description}</h2>
+        </div>
 
-      <div>
-        <div className="main">
-          {data.results.map((comics, index) => {
+        <div className="offer-container2">
+          {data2.results.map((comics, index) => {
             return (
               <div className="card-container" key={comics._id}>
                 <h3>{comics.name}</h3>
